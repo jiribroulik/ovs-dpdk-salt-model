@@ -64,6 +64,10 @@ parameters:
 
 
     openstack_telemetry_hostname: mdb
+    openstack_telemetry_node01_hostname: mdb01
+    openstack_telemetry_node02_hostname: mdb02
+    openstack_telemetry_node03_hostname: mdb03
+
     openstack_telemetry_address: 10.167.4.75
     openstack_telemetry_node01_address: 10.167.4.76
     openstack_telemetry_node02_address: 10.167.4.77
