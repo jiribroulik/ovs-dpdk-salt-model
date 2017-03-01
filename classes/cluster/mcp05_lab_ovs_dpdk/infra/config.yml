@@ -30,6 +30,8 @@ parameters:
         infra_compute_node01:
           params:
             keepalived_vip_priority: 100
+            deploy_nic: enp3s0f0
+            primary_first_nic: enp3s0f1
         infra_compute_node02:
           params:
             keepalived_vip_priority: 101

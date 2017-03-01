@@ -1,6 +1,6 @@
 classes:
 
-- system.linux.system.repo.mos9
+- system.linux.system.repo.mcp10
 
 - system.linux.system.repo.saltstack_2016_3_trusty
 - system.nova.compute.cluster
@@ -20,6 +20,8 @@ parameters:
     nova_vncproxy_url: http://${_param:openstack_proxy_address}:6080
     primary_interface: eth0
     external_interface: eth1
+    linux_system_codename: xenial
+
 ##FIXME
   # linux:
   #   network:
