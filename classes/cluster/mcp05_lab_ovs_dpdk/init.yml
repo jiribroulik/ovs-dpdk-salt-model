@@ -21,7 +21,7 @@ parameters:
     #linux_repo_refresh_db: True
 
     # infra service addresses
-    infra_config_address: 10.167.4.90
+    infra_config_address: 172.16.49.2
     infra_config_deploy_address: 172.16.49.2
 
     openstack_gateway_node01_address: 10.167.4.224
