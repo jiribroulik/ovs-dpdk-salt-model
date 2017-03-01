@@ -88,11 +88,6 @@ parameters:
   linux:
     network:
       interface:
-        eth0:
-          enabled: true
-          type: eth
-          proto: manual
-          name: ${_param:deploy_nic}
         eth1:
           enabled: true
           type: slave
