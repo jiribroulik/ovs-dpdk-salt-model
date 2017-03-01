@@ -10,7 +10,7 @@ classes:
 parameters:
   _param:
     openstack_version: mitaka
-    cluster_domain: mcp05-lab-ovs_dpdk.local
+    cluster_domain: mcp05-lab-ovs-dpdk.local
     stacklight_environment: ${_param:cluster_domain}
     reclass_data_revision: master
     cluster_name: mcp05_lab_ovs_dpdk
