@@ -148,17 +148,17 @@ parameters:
     #ntp_strata_host2:
 
     # Interface definitions
-    #linux_dhcp_interface:
-    #  enabled: true
-    #  type: eth
-    #  proto: dhcp
-    #linux_single_interface:
-    #  enabled: true
-    #  type: eth
-    #  proto: static
-    #  address: ${_param:single_address}
-    #  netmask: 255.255.255.0
-    #  gateway: 10.167.4.1
-    #  name_servers:
-    #    - 8.8.8.8
-    #    - 8.8.4.4
+    linux_dhcp_interface:
+      enabled: true
+      type: eth
+      proto: dhcp
+    linux_single_interface:
+      enabled: true
+      type: eth
+      proto: static
+      address: ${_param:single_address}
+      netmask: 255.255.255.0
+      gateway: 10.167.4.1
+      name_servers:
+        - 8.8.8.8
+        - 8.8.4.4
