@@ -62,6 +62,8 @@ parameters:
     openstack_message_queue_node02_address: 10.167.4.42
     openstack_message_queue_node03_address: 10.167.4.43
 
+
+    openstack_telemetry_hostname: mdb
     openstack_telemetry_address: 10.167.4.75
     openstack_telemetry_node01_address: 10.167.4.76
     openstack_telemetry_node02_address: 10.167.4.77
