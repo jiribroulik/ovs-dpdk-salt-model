@@ -42,7 +42,7 @@ parameters:
     infra_compute_node02_deploy_address: 172.16.49.12
     infra_compute_node03_deploy_address: 172.16.49.13
     infra_compute_node01_hostname: kvm01
-    infra_computenode02_hostname: kvm02
+    infra_compute_node02_hostname: kvm02
     infra_compute_node03_hostname: kvm03
 
     # openstack service addresses
