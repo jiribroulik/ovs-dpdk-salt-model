@@ -3,6 +3,8 @@ classes:
 - system.linux.system.repo.mcp10
 
 - system.linux.system.repo.saltstack_2016_3_trusty
+- system.nova.compute.nfv.hugepages
+- system.nova.compute.nfv.cpu_pinning
 - system.nova.compute.cluster
 - system.neutron.compute.cluster
 - system.ceilometer.agent.cluster
@@ -21,9 +23,19 @@ parameters:
     primary_interface: eth0
     external_interface: eth1
     linux_system_codename: xenial
-
+  neutron:
+    compute:
+      dpdk: True
   linux:
     network:
+      bridge: openvswitch
+      dpdk:
+        enabled: true
+        driver: uio
+      openvswitch:
+        pmd_cpu_mask: "0x6"
+        dpdk_socket_mem: "1024,1024"
+        dpdk_lcore_mask: "0x400"
       interface:
         bond0.2416:
           enabled: true
@@ -51,48 +63,25 @@ parameters:
           proto: manual
           use_interfaces:
           - bond0.2417
-
-##FIXME
-  # linux:
-  #   network:
-  #     bridge: openvswitch
-  #     interface:
-  #       primary_second_nic:
-  #         name: ${_param:primary_second_nic}
-  #         enabled: true
-  #         type: slave
-  #         mtu: 9000
-  #         master: bond0
-  #       bond0:
-  #         enabled: true
-  #         proto: manual
-  #         type: bond
-  #         use_interfaces:
-  #         - ${_param:primary_second_nic}
-  #         slaves: ${_param:primary_second_nic}
-  #         mode: active-backup
-  #         mtu: 9000
-  #       bond0.1800:
-  #         enabled: true
-  #         type: vlan
-  #         proto: static
-  #         address: ${_param:single_address}
-  #         netmask: 255.255.255.0
-  #         mtu: 9000
-  #         use_interfaces:
-  #         - bond0
-  #       bond0.1801:
-  #         enabled: true
-  #         type: vlan
-  #         proto: manual
-  #         mtu: 9000
-  #         use_interfaces:
-  #         - bond0
-  #       br-mesh:
-  #         enabled: true
-  #         type: bridge
-  #         address: ${_param:tenant_address}
-  #         netmask: 255.255.255.0
-  #         mtu: 9000
-  #         use_interfaces:
-  #         - bond0.1801
+        dpdk_first_nic:
+          name: enp5s0f1
+          pci: 0000:05:00.1
+          driver: igb_uio
+          bond: dpdkbond0
+          enabled: true
+          type: dpdk_ovs_port
+        dpdk_second_nic:
+          name: enp5s0f2
+          pci: 0000:05:00.2
+          driver: igb_uio
+          bond: dpdkbond0
+          enabled: true
+          type: dpdk_ovs_port
+        dpdkbond0:
+          enabled: true
+          bridge: br-prv
+          type: dpdk_ovs_bond
+          mode: active-backup
+        br-prv:
+          enabled: true
+          type: dpdk_ovs_bridge

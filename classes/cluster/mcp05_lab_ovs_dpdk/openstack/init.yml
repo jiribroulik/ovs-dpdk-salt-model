@@ -15,6 +15,11 @@ parameters:
     neutron_compute_agent_mode: legacy
     neutron_compute_external_access: False
 #    neutron_tenant_vlan_range: "1810:1840" not needed
+    nova_cpu_pinning: "1,2,3,4,5,7,8,9,10,11"
+    compute_hugepages_size: 1G
+    compute_hugepages_count: 16
+    compute_hugepages_mount: /mnt/hugepages_1G
+    compute_kernel_isolcpu: ${_param:nova_cpu_pinning}
     galera_server_cluster_name: openstack_cluster
     galera_server_maintenance_password: password
     galera_server_admin_password: password
