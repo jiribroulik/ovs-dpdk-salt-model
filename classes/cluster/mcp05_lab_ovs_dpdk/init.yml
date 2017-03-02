@@ -14,7 +14,7 @@ parameters:
     stacklight_environment: ${_param:cluster_domain}
     reclass_data_revision: master
     cluster_name: mcp05_lab_ovs_dpdk
-    cluster_public_host: 10.167.4.10
+    cluster_public_host: 10.167.4.80
     infra_config_hostname: cfg01
     ##local repositiry for aptly
     #local_repo_url: ip_address

@@ -22,6 +22,36 @@ parameters:
     external_interface: eth1
     linux_system_codename: xenial
 
+  linux:
+    network:
+      interface:
+        bond0.2416:
+          enabled: true
+          proto: manual
+          type: vlan
+          use_interfaces:
+          - bond0
+        bond0.2417:
+          enabled: true
+          proto: manual
+          type: vlan
+          use_interfaces:
+          - bond0
+        br_ctl:
+          enabled: true
+          type: bridge
+          proto: static
+          address: ${_param:single_address}
+          netmask: 255.255.255.0
+          use_interfaces:
+          - bond0.2416
+        br_data:
+          enabled: true
+          type: bridge
+          proto: manual
+          use_interfaces:
+          - bond0.2417
+
 ##FIXME
   # linux:
   #   network:
