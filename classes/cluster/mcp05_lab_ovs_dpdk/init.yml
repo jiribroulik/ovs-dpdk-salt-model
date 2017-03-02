@@ -152,6 +152,10 @@ parameters:
       enabled: true
       type: eth
       proto: dhcp
+      gateway: 172.16.49.1
+      name_servers:
+        - 8.8.8.8
+        - 8.8.4.4
     linux_single_interface:
       enabled: true
       type: eth
