@@ -1,8 +1,8 @@
 classes:
 
 - system.linux.system.repo.mos9
-
 - system.linux.system.repo.saltstack_2016_3_trusty
+- service.keepalived.cluster.single
 - system.glusterfs.server.volume.glance
 - system.glusterfs.server.volume.keystone
 - system.glusterfs.server.cluster
@@ -94,12 +94,6 @@ parameters:
           proto: manual
           name: ${_param:primary_first_nic}
           master: bond0
-        eth2:
-          enabled: true
-          type: slave
-          proto: manual
-          name: ${_param:deploy_nic}
-          master: bond0
         br_mgm:
           enabled: true
           proto: static
@@ -118,8 +112,7 @@ parameters:
           type: bond
           use_interfaces:
           - ${_param:primary_first_nic}
-          - ${_param:deploy_nic}
-          slaves: ${_param:primary_first_nic} ${_param:deploy_nic}
+          slaves: ${_param:primary_first_nic}
           mode: active-backup
         bond0.2416:
           enabled: true
