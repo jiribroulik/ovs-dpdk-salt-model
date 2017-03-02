@@ -16,64 +16,65 @@ parameters:
     neutron_compute_external_access: False
 #    neutron_tenant_vlan_range: "1810:1840" not needed
     galera_server_cluster_name: openstack_cluster
-    galera_server_maintenance_password: 7777777777777777
-    galera_server_admin_password: 7777777777777777
-    rabbitmq_secret_key: 7777777777777777
-    rabbitmq_admin_password: 7777777777777777
-    rabbitmq_openstack_password: 7777777777777777
+    galera_server_maintenance_password: password
+    galera_server_admin_password: password
+    rabbitmq_secret_key: password
+    rabbitmq_admin_password: password
+    rabbitmq_openstack_password: password
     glance_version: ${_param:openstack_version}
     glance_service_host: ${_param:openstack_control_address}
     keystone_version: ${_param:openstack_version}
     keystone_service_host: ${_param:openstack_control_address}
     heat_version: ${_param:openstack_version}
     heat_service_host: ${_param:openstack_control_address}
-    heat_domain_admin_password: 7777777777777777
+    heat_domain_admin_password: password
     cinder_version: ${_param:openstack_version}
     cinder_service_host: ${_param:openstack_control_address}
     ceilometer_version: ${_param:openstack_version}
     ceilometer_service_host: ${_param:openstack_telemetry_address}
-    ceilometer_influxdb_password: 7777777777777777
+    ceilometer_influxdb_password: password
     nova_version: ${_param:openstack_version}
     nova_service_host: ${_param:openstack_control_address}
     neutron_version: ${_param:openstack_version}
     neutron_service_host: ${_param:openstack_control_address}
     glusterfs_service_host: ${_param:infra_compute_address}
     mysql_admin_user: root
-    mysql_admin_password: 7777777777777777
-    mysql_cinder_password: 7777777777777777
-    mysql_ceilometer_password: 7777777777777777
-    mysql_glance_password: 7777777777777777
-    mysql_heat_password: 7777777777777777
-    mysql_keystone_password: 7777777777777777
-    mysql_neutron_password: 7777777777777777
-    mysql_nova_password: 7777777777777777
-    keystone_service_token: 7777777777777777
-    keystone_admin_password: 7777777777777777
-    keystone_ceilometer_password: 7777777777777777
-    keystone_cinder_password: 7777777777777777
-    keystone_glance_password: 7777777777777777
-    keystone_heat_password: 7777777777777777
-    keystone_keystone_password: 7777777777777777
-    keystone_neutron_password: 7777777777777777
-    keystone_nova_password: 7777777777777777
-    ceilometer_secret_key: 7777777777777777
+    mysql_admin_password: password
+    mysql_cinder_password: password
+    mysql_ceilometer_password: password
+    mysql_glance_password: password
+    mysql_heat_password: password
+    mysql_keystone_password: password
+    mysql_neutron_password: password
+    mysql_nova_password: password
+    mysql_aodh_password: 
+    keystone_service_token: password
+    keystone_admin_password: password
+    keystone_ceilometer_password: password
+    keystone_cinder_password: password
+    keystone_glance_password: password
+    keystone_heat_password: password
+    keystone_keystone_password: password
+    keystone_neutron_password: password
+    keystone_nova_password: password
+    ceilometer_secret_key: password
     horizon_version: ${_param:openstack_version}
-    horizon_secret_key: 7777777777777777777777777777777777777777777777777777777777777777
+    horizon_secret_key: passwordpasswordpasswordpassword
     horizon_identity_host: ${_param:openstack_control_address}
     horizon_identity_encryption: none
     horizon_identity_version: 3
     mongodb_server_replica_set: ceilometer
-    mongodb_ceilometer_password: 7777777777777777
-    mongodb_admin_password: 7777777777777777
-    mongodb_shared_key: 7777777777777777777777777777777777777777777777777777777777777777
-    metadata_password: 7777777777777777
-    openstack_telemetry_keepalived_password: 7777777777777777
+    mongodb_ceilometer_password: password
+    mongodb_admin_password: password
+    mongodb_shared_key: passwordpasswordpasswordpassword
+    metadata_password: password
+    openstack_telemetry_keepalived_password: password
     # Billing
-    #keystone_billometer_password: 7777777777777777
+    #keystone_billometer_password: password
     #keystone_billometer_address: ${_param:billometer_service_host}
     #billometer_service_host: ${_param:openstack_billing_address}
     #billometer_version: ${_param:openstack_version}
-    #billometer_secret_key: 7777777777777777777777777777777777777777777777777777777777777777
+    #billometer_secret_key: passwordpasswordpasswordpassword
     #billometer_identity_password: ${_param:keystone_billometer_password}
     #billometer_identity_host: ${_param:openstack_control_address}
     #billometer_identity_token: ${_param:keystone_service_token}
