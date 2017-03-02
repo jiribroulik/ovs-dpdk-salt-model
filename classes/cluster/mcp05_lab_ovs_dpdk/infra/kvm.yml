@@ -94,6 +94,11 @@ parameters:
           proto: manual
           name: ${_param:primary_first_nic}
           master: bond0
+        eth2:
+          enabled: true
+          type: eth
+          proto: manual
+          name: ${_param:deploy_nic}
         br_mgm:
           enabled: true
           proto: static
