@@ -1,7 +1,7 @@
 classes:
 
-- system.linux.system.repo.mos9
-
+- system.linux.system.repo.mos92
+- system.linux.system.repo.mos9_galera
 - system.linux.system.repo.tcp_extra
 - system.linux.system.repo.saltstack_2016_3_trusty
 - system.galera.server.cluster
