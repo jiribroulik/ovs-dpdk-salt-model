@@ -47,7 +47,9 @@ parameters:
     mysql_keystone_password: password
     mysql_neutron_password: password
     mysql_nova_password: password
-    mysql_aodh_password: 
+    mysql_aodh_password: password
+    aodh_version: ${_param:openstack_version}
+    keystone_aodh_password: password
     keystone_service_token: password
     keystone_admin_password: password
     keystone_ceilometer_password: password
