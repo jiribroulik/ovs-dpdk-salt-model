@@ -71,6 +71,7 @@ parameters:
     mongodb_shared_key: passwordpasswordpasswordpassword
     metadata_password: password
     openstack_telemetry_keepalived_password: password
+    cluster_public_protocol: http
     # Billing
     #keystone_billometer_password: password
     #keystone_billometer_address: ${_param:billometer_service_host}
