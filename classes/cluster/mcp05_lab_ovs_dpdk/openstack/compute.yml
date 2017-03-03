@@ -36,6 +36,7 @@ parameters:
         pmd_cpu_mask: "0x6"
         dpdk_socket_mem: "1024"
         dpdk_lcore_mask: "0x400"
+        memory_channels: "2"
       interface:
         bond0.2416:
           enabled: true
