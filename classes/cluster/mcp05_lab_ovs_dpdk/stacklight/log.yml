@@ -3,7 +3,6 @@ classes:
 - system.linux.system.repo.tcp_base
 - system.elasticsearch.server.cluster
 - system.haproxy.proxy.listen.elasticsearch
-- system.elasticsearch.client.single
 - service.haproxy.proxy.single
 - system.keepalived.cluster.instance.stacklight_log_vip
 - cluster.mcp05_lab_ovs_dpdk
