@@ -6,7 +6,6 @@ classes:
 - system.heka.ceilometer_collector.single
 - system.ceilometer.server.cluster
 - system.aodh.server.cluster
-- system.keystone.client.service.aodh 
 - cluster.mcp05_lab_ovs_dpdk
 parameters:
   _param:
