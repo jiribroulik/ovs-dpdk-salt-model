@@ -77,6 +77,7 @@ parameters:
     metadata_password: password
     openstack_telemetry_keepalived_password: password
     cluster_public_protocol: http
+    aodh_service_host: ${_param:openstack_telemetry_address}
     # Billing
     #keystone_billometer_password: password
     #keystone_billometer_address: ${_param:billometer_service_host}
