@@ -54,14 +54,16 @@ parameters:
           enabled: true
           type: bridge
           proto: static
-          address: ${_param:single_address}
-          netmask: 255.255.255.0
+          address: ${_param:control_address}
+          netmask: 255.255.255.192
           use_interfaces:
           - bond0.2416
         br_data:
           enabled: true
           type: bridge
-          proto: manual
+          proto: static
+          address: ${_param:single_address}
+          netmask: 255.255.255.0
           use_interfaces:
           - bond0.2417
         dpdk0:
