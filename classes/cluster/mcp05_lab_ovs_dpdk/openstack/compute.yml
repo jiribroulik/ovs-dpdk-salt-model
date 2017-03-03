@@ -71,6 +71,7 @@ parameters:
           bond: dpdkbond0
           enabled: true
           type: dpdk_ovs_port
+          n_rxq: 2
         dpdk1:
           name: enp5s0f2
           pci: "0000:05:00.2"
@@ -78,6 +79,7 @@ parameters:
           bond: dpdkbond0
           enabled: true
           type: dpdk_ovs_port
+          n_rxq: 2
         dpdkbond0:
           enabled: true
           bridge: br-prv
