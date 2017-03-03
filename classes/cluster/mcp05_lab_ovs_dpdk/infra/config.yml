@@ -53,6 +53,7 @@ parameters:
         stacklight_log_node01:
           classes:
           - system.elasticsearch.client.single
+          - system.grafana.client.single
         openstack_control_node01:
           classes:
           - cluster.${_param:cluster_name}.openstack.control_init
