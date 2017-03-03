@@ -55,7 +55,7 @@ parameters:
           type: bridge
           proto: static
           address: ${_param:control_address}
-          netmask: 255.255.255.192
+          netmask: 255.255.255.0
           use_interfaces:
           - bond0.2416
         br_data:
