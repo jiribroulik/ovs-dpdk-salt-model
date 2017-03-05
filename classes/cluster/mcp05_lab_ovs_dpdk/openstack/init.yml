@@ -189,9 +189,19 @@ parameters:
           address: ${_param:openstack_compute_node01_control_address}
           names:
           - ${_param:openstack_compute_node01_hostname}
-          - ${_param:openstack_compute_node01_hostname}${_param:cluster_domain}
+          - ${_param:openstack_compute_node01_hostname}.${_param:cluster_domain}
         cmp002:
           address: ${_param:openstack_compute_node02_control_address}
           names:
           - ${_param:openstack_compute_node02_hostname}
           - ${_param:openstack_compute_node02_hostname}.${_param:cluster_domain}
+        gtw01:
+          address: ${_param:openstack_gateway_node01_address}
+          names:
+          - ${_param:openstack_gateway_node01_hostname}
+          - ${_param:openstack_gateway_node01_hostname}${_param:cluster_domain}
+        gtw02:
+          address: ${_param:openstack_gateway_node02_address}
+          names:
+          - ${_param:openstack_gateway_node02_hostname}
+          - ${_param:openstack_gateway_node02_hostname}.${_param:cluster_domain}
