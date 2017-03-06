@@ -1,5 +1,4 @@
 classes:
-- system.linux.system.repo.mcp10
 - system.linux.system.repo.mos92
 - system.linux.system.repo.mos9_galera
 - system.linux.system.repo.tcp_extra
@@ -13,7 +12,6 @@ classes:
 - system.cinder.control.cluster
 - system.cinder.volume.single
 - system.heat.server.cluster
-- system.keystone.client.service.aodh 
 - system.glusterfs.client.cluster
 - system.glusterfs.client.volume.glance
 - system.glusterfs.client.volume.keystone
@@ -31,8 +29,6 @@ parameters:
     cluster_node03_hostname: ctl03
     cluster_node03_address: ${_param:openstack_control_node03_address}
     nova_vncproxy_url: http://${_param:openstack_proxy_address}:6080
-    linux_system_codename: xenial
-
   linux:
     network:
       interface:
