@@ -3,3 +3,6 @@ classes:
 - system.keystone.client.service.aodh 
 - system.keystone.client.service.ceilometer
 - system.keystone.client.service.nova21
+parameters:
+  _param:
+    cluster_public_protocol: http
