@@ -29,6 +29,8 @@ parameters:
     cluster_node03_hostname: ctl03
     cluster_node03_address: ${_param:openstack_control_node03_address}
     nova_vncproxy_url: http://${_param:openstack_proxy_address}:6080
+    cluster_public_protocol: http
+
   linux:
     network:
       interface:
