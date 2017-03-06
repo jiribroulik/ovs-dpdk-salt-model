@@ -3,6 +3,7 @@
 classes:
 - system.linux.system.single
 - system.openssh.server.team.tcpcloud
+- cluster.mcp05_lab_ovs_dpdk._team
 - cluster.mcp05_lab_ovs_dpdk.infra
 - cluster.mcp05_lab_ovs_dpdk.openstack
 - cluster.mcp05_lab_ovs_dpdk.stacklight
