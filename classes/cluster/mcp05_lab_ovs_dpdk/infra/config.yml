@@ -85,4 +85,4 @@ parameters:
             control_address: ${_param:openstack_compute_node02_control_address}
             single_address: ${_param:openstack_compute_node02_single_address}
             tenant_address: ${_param:openstack_compute_node02_tenant_address}
-            dpdk1_pci: "0000:0c:00.0"
+            dpdk1_pci: "0000:05:00.0"
