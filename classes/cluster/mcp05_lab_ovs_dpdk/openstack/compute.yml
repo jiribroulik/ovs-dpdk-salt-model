@@ -20,12 +20,14 @@ parameters:
     cluster_node03_hostname: ctl03
     cluster_node03_address: ${_param:openstack_control_node03_address}
     nova_vncproxy_url: http://${_param:openstack_proxy_address}:6080
-    primary_interface: eth0
-    external_interface: eth1
+    primary_first_bond0_nic: eth0
+    primary_second_bond0_nic: eth1
     linux_system_codename: xenial
   neutron:
     compute:
       dpdk: True
+      backend:
+        tenant_vlan_range: "${_param:neutron_tenant_vlan_range}"
   linux:
     network:
       bridge: openvswitch
@@ -38,26 +40,38 @@ parameters:
         dpdk_lcore_mask: "0x400"
         memory_channels: "2"
       interface:
-        bond0.2416:
+        primary_first_bond1_nic:
+          name: ${_param:primary_first_bond1_nic}
+          enabled: true
+          type: slave
+          master: bond1
+        primary_second_bond1_nic:
+          name: ${_param:primary_second_bond1_nic}
+          enabled: true
+          type: slave
+          master: bond1
+        bond1:
           enabled: true
           proto: manual
-          type: vlan
+          name: bond1
+          ovs_bridge: br-prv
+          ovs_type: OVSPort
+          type: bond
           use_interfaces:
-          - bond0
-        bond0.2417:
+          - ${_param:primary_second_bond1_nic} ${_param:primary_first_bond1_nic}
+          slaves: ${_param:primary_first_bond1_nic}
+          mode: active-backup
+        br-prv:
           enabled: true
-          proto: manual
-          type: vlan
-          use_interfaces:
-          - bond0
+          type: ovs_bridge
         br_ctl:
           enabled: true
-          type: bridge
+          type: ovs_port
+          bridge: br-prv
           proto: static
+          ovs_options: tag=2416
           address: ${_param:control_address}
           netmask: 255.255.255.0
-          use_interfaces:
-          - bond0.2416
         br_data:
           enabled: true
           type: bridge
