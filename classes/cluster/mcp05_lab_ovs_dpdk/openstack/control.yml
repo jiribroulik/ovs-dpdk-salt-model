@@ -31,6 +31,11 @@ parameters:
     nova_vncproxy_url: http://${_param:openstack_proxy_address}:6080
     cluster_public_protocol: http
 
+  neutron:
+    server:
+      dpdk: True
+      backend:
+        tenant_vlan_range: "${_param:neutron_tenant_vlan_range}"
   linux:
     network:
       interface:
