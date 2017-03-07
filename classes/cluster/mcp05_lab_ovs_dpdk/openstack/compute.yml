@@ -23,7 +23,7 @@ parameters:
     primary_interface: eth0
     external_interface: eth1
     dpdk0_pci: "0000:05:00.1"
-    pdkd1_pci: "0000:05:00.2"
+    dpdk1_pci: "0000:05:00.2"
     linux_system_codename: xenial
   neutron:
     compute:
