@@ -78,8 +78,8 @@ parameters:
             dpdk1_name: enp5s0f2
             dpdk0_pci: '"0000:05:00.1"'
             dpdk1_pci: '"0000:05:00.2"'
-            primary_first_bond1_nic: ${_param:dpdk0_name}
-            primary_second_bond2_nic: ${_param:dpdk1_name}
+            primary_first_bond1_nic: enp5s0f1
+            primary_second_bond2_nic: enp5s0f2
         openstack_compute_node02:
           name: ${_param:openstack_compute_node02_hostname}
           domain: ${_param:cluster_domain}
@@ -95,5 +95,5 @@ parameters:
             dpdk1_name: enp5s0f1
             dpdk0_pci: '"0000:05:00.1"'
             dpdk1_pci: '"0000:05:00.0"'
-            primary_first_bond1_nic: ${_param:dpdk0_name}
-            primary_second_bond2_nic: ${_param:dpdk1_name}
+            primary_first_bond1_nic: enp5s0f0
+            primary_second_bond2_nic: enp5s0f1
