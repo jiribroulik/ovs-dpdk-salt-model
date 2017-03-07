@@ -85,14 +85,4 @@ parameters:
             control_address: ${_param:openstack_compute_node02_control_address}
             single_address: ${_param:openstack_compute_node02_single_address}
             tenant_address: ${_param:openstack_compute_node02_tenant_address}
-            linux:
-              network:
-                interface:
-                  dpdk1:
-                    name: eno2
-                    pci: "0000:0c:00.0"
-                    driver: igb_uio
-                    bond: dpdkbond0
-                    enabled: true
-                    type: dpdk_ovs_port
-                    n_rxq: 2
+            pdkd1_pci: "0000:0c:00.0"

@@ -22,6 +22,8 @@ parameters:
     nova_vncproxy_url: http://${_param:openstack_proxy_address}:6080
     primary_interface: eth0
     external_interface: eth1
+    dpdk0_pci: "0000:05:00.1"
+    pdkd1_pci: "0000:05:00.2"
     linux_system_codename: xenial
   neutron:
     compute:
@@ -68,7 +70,7 @@ parameters:
           - bond0.2417
         dpdk0:
           name: enp5s0f1
-          pci: "0000:05:00.1"
+          pci: ${_param:dpdk0_pci}
           driver: igb_uio
           bond: dpdkbond0
           enabled: true
@@ -76,7 +78,7 @@ parameters:
           n_rxq: 2
         dpdk1:
           name: enp5s0f2
-          pci: "0000:05:00.2"
+          pci: ${_param:dpdk1_pci}
           driver: igb_uio
           bond: dpdkbond0
           enabled: true
