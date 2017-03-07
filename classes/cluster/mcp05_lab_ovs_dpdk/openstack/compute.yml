@@ -72,14 +72,6 @@ parameters:
           ovs_options: tag=2416
           address: ${_param:control_address}
           netmask: 255.255.255.0
-        br_data:
-          enabled: true
-          type: bridge
-          proto: static
-          address: ${_param:tenant_address}
-          netmask: 255.255.255.0
-          use_interfaces:
-          - bond0.2417
         dpdk0:
           name: ${_param:dpdk0_name}
           pci: ${_param:dpdk0_pci}
