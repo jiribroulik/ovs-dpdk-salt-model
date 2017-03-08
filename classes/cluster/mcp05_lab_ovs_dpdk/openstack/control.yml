@@ -8,6 +8,7 @@ classes:
 - system.keystone.server.cluster
 - system.glance.control.cluster
 - system.neutron.control.openvswitch.cluster
+- system.neutron.control.openvswitch.dpdk
 - system.nova.control.cluster
 - system.cinder.control.cluster
 - system.cinder.volume.single
@@ -33,7 +34,6 @@ parameters:
 
   neutron:
     server:
-      dpdk: True
       backend:
         tenant_vlan_range: "${_param:neutron_tenant_vlan_range}"
   linux:

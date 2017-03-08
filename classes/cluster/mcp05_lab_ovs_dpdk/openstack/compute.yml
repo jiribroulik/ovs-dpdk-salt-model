@@ -5,6 +5,7 @@ classes:
 - system.linux.system.repo.saltstack_2016_3_trusty
 - system.nova.compute.nfv.hugepages
 - system.nova.compute.nfv.cpu_pinning
+- system.neutron.compute.nfv.dpdk
 - system.nova.compute.cluster
 - system.neutron.compute.cluster
 - system.ceilometer.agent.cluster
@@ -25,20 +26,10 @@ parameters:
     linux_system_codename: xenial
   neutron:
     compute:
-      dpdk: True
       backend:
         tenant_vlan_range: "${_param:neutron_tenant_vlan_range}"
   linux:
     network:
-      bridge: openvswitch
-      dpdk:
-        enabled: true
-        driver: uio
-      openvswitch:
-        pmd_cpu_mask: "0x6"
-        dpdk_socket_mem: "1024"
-        dpdk_lcore_mask: "0x400"
-        memory_channels: "2"
       interface:
         primary_first_bond1_nic:
           name: ${_param:primary_first_bond1_nic}
