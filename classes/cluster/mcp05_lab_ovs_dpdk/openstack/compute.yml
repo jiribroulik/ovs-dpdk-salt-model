@@ -52,9 +52,6 @@ parameters:
           - ${_param:primary_second_bond1_nic} ${_param:primary_first_bond1_nic}
           slaves: ${_param:primary_first_bond1_nic}
           mode: active-backup
-        br-prv:
-          enabled: true
-          type: ovs_bridge
         dpdk0:
           name: ${_param:dpdk0_name}
           pci: ${_param:dpdk0_pci}
