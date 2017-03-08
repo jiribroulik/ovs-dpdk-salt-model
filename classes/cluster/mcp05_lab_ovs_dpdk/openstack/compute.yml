@@ -31,27 +31,6 @@ parameters:
   linux:
     network:
       interface:
-        primary_first_bond1_nic:
-          name: ${_param:primary_first_bond1_nic}
-          enabled: true
-          type: slave
-          master: bond1
-        primary_second_bond1_nic:
-          name: ${_param:primary_second_bond1_nic}
-          enabled: true
-          type: slave
-          master: bond1
-        bond1:
-          enabled: true
-          proto: manual
-          name: bond1
-          ovs_bridge: br-prv
-          ovs_type: OVSPort
-          type: bond
-          use_interfaces:
-          - ${_param:primary_second_bond1_nic} ${_param:primary_first_bond1_nic}
-          slaves: ${_param:primary_first_bond1_nic}
-          mode: active-backup
         dpdk0:
           name: ${_param:dpdk0_name}
           pci: ${_param:dpdk0_pci}
